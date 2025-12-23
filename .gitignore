@@ -1,0 +1,13 @@
+# Windows system files
+desktop.ini
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Node/NPM (even if you aren't using them yet, good to have)
+node_modules/
+dist/
+
+# Env secrets
+.env
