@@ -3,7 +3,7 @@ console.log("Email Templates Extension has started!");
 function checkForCompose() {
     const gmailToolbar = document.querySelector(".btC");
     
-    const outlookSendButton = document.querySelector("[data.testid='ComposeSendButton']");
+    const outlookSendButton = document.querySelector("[data-testid='ComposeSendButton']");
     const outlookToolbar = outlookSendButton ? outlookSendButton.parentElement : null;
 
     if (gmailToolbar && !document.querySelector(".myTemplates")) {
