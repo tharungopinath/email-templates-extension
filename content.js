@@ -1,23 +1,31 @@
 console.log("Email Templates Extension has started!");
 
 function checkForCompose() {
-    const gmailToolbar = document.querySelectorAll(".btC");
-    gmailToolbar.forEach((toolbar) => {
-        if (!toolbar.querySelector(".myTemplates")) {
-            console.log("Found a new Gmail window!");
-            toolbar.appendChild(createButton());
+    chrome.storage.sync.get("isEnabled", (data) => {
+        if (data.isEnabled === false) {
+            // If OFF, find and remove any existing buttons
+            const existingButtons = document.querySelectorAll(".myTemplates");
+            existingButtons.forEach(btn => btn.remove());
+            return; 
         }
-    });
-    
-    const outlookSendButton = document.querySelectorAll("[data-testid='ComposeSendButton']");
-    outlookSendButton.forEach((sendButton) => {
-        if (sendButton && sendButton.parentElement){
-            const toolbar = sendButton.parentElement;
+        const gmailToolbar = document.querySelectorAll(".btC");
+        gmailToolbar.forEach((toolbar) => {
             if (!toolbar.querySelector(".myTemplates")) {
-                console.log("Found a new Outlook window!");
+                console.log("Found a new Gmail window!");
                 toolbar.appendChild(createButton());
             }
-        }
+        });
+        
+        const outlookSendButton = document.querySelectorAll("[data-testid='ComposeSendButton']");
+        outlookSendButton.forEach((sendButton) => {
+            if (sendButton && sendButton.parentElement){
+                const toolbar = sendButton.parentElement;
+                if (!toolbar.querySelector(".myTemplates")) {
+                    console.log("Found a new Outlook window!");
+                    toolbar.appendChild(createButton());
+                }
+            }
+        });
     });
 }
 
@@ -126,12 +134,18 @@ function  createButton () {
     return templateButton;
 }
 
-// const observer = new MutationObserver((mutation) => {
-//     checkForCompose();
-// });
+const observer = new MutationObserver((mutation) => {
+    checkForCompose();
+});
 
-// observer.observe(document.body, {
-//     childList:true,
-//     subtree: true
-// });
-setInterval(checkForCompose, 2000);
+observer.observe(document.body, {
+    childList:true,
+    subtree: true
+});
+
+chrome.storage.onChanged.addListener((changes, namespace) => {
+    if (changes.isEnabled) {
+        checkForCompose();
+    }
+});
+//setInterval(checkForCompose, 2000);

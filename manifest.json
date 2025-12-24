@@ -1,19 +1,26 @@
 {
-  "manifest_version": 3,
-  "name": "EmailTemplates",
-  "version": "1.0",
-  "description": "Email templates for networking.",
-  "permissions": ["storage"],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://mail.google.com/*",
-        "https://outlook.live.com/*",
-        "https://outlook.office.com/*",
-        "https://outlook.office365.com/*"
-      ],
-      "js": ["content.js"],
-      "css": ["styles.css"]
+    "manifest_version": 3,
+    "name": "Emplates",
+    "version": "1.0",
+    "description": "Save and insert email templates in Gmail and Outlook, boosting your productivity and optimizing your workflow.",
+    "permissions": ["storage"],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+        "matches": [
+            "https://mail.google.com/*",
+            "https://outlook.live.com/*",
+            "https://outlook.office.com/*",
+            "https://outlook.office365.com/*"
+        ],
+        "js": ["content.js"],
+        "css": ["styles.css"]
+        }
+    ],
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
     }
-  ]
 }

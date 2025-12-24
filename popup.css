@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    width: 250px;
+    padding: 15px;
+    background-color: rgb(27, 99, 27);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #4b9f4b;
+}
+
+h1 {
+    color:rgb(89, 201, 93);
+    font-size: 50px;
+    font-family: "Poppins", sans-serif;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.switch { 
+    position: relative; 
+    display: inline-block; 
+    width: 90px; 
+    height: 48px;
+}
+
+.switch input { 
+    opacity: 0; 
+    width: 0; 
+    height: 0; 
+}
+
+.slider { 
+    position: absolute; 
+    cursor: pointer; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: #cccccc; 
+    transition: .4s; 
+    border-radius: 48px; 
+}
+
+input:checked + .slider { 
+    background-color: #38903c; 
+}
+
+.slider:before { 
+    position: absolute; 
+    content: ""; 
+    height: 34px; 
+    width: 34px; 
+    left: 7px; 
+    bottom: 7px; 
+    background-color: white; 
+    transition: .4s; 
+    border-radius: 50%; 
+}
+
+input:checked + .slider:before { 
+    transform: translateX(42px); 
+}
+
+.switchContainer {
+    max-width: fit-content;
+}
+
+.toggleArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #65cd67;
+    background-color: #143c17;
+    padding: 20px;
+    gap: 10px;
+}
+
+#info {
+    font-size: 13px;
+    color: #e0e6e1;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+.managerContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+}
+
+.manager {
+    font-family: "Montserrat", sans-serif;
+    background-color: rgb(27, 99, 27);
+    border-width: 0px;
+    color: #c8d4ca;
+    font-weight: 500;
+    padding-left: 0;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+ 
+.manager:hover {
+    color: #ffffff;
+}
