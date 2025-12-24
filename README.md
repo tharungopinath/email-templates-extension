@@ -22,7 +22,7 @@
 
 ## 📦 Installation
 
-### From Chrome Web Store (Coming Soon)
+### From Chrome Web Store
 Visit the [Chrome Web Store](#) and click **Add to Chrome**.
 
 ### Manual Installation (Developer Mode)

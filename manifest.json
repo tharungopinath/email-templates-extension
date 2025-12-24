@@ -16,10 +16,10 @@
     "content_scripts": [
         {
         "matches": [
-            "https://mail.google.com/*",
-            "https://outlook.live.com/*",
-            "https://outlook.office.com/*",
-            "https://outlook.office365.com/*"
+            "*://mail.google.com/*",
+            "*://outlook.live.com/*",
+            "*://outlook.office.com/*",
+            "*://outlook.office365.com/*"
         ],
         "js": ["content.js"],
         "css": ["styles.css"]
