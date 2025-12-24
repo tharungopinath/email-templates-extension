@@ -4,7 +4,6 @@
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-4285F4?style=flat-square&logo=google-chrome)](https://chrome.google.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-1.0-blue?style=flat-square)](package.json)
 
 ---
 
@@ -216,7 +215,7 @@ You're free to use, modify, and distribute this extension for personal or commer
 ## 👨‍💻 Author
 
 **Tharun Gopinath**  
-[GitHub](https://github.com) | [Portfolio](#)
+[GitHub](https://github.com/tharungopinath) 
 
 ---
 
@@ -225,14 +224,6 @@ You're free to use, modify, and distribute this extension for personal or commer
 - Inspired by real-world email workflows and productivity pain points
 - Built with Chrome Manifest V3 best practices
 - Community feedback and testing
-
----
-
-## 📞 Support & Feedback
-
-Have a bug report or feature request?  
-- Open an [issue](https://github.com/yourusername/email-templates-extension/issues) on GitHub
-- Email: [your-email@example.com]
 
 ---
 
